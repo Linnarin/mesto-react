@@ -8,6 +8,7 @@ import ImagePopup from './ImagePopup';
 function App() {
 
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [selectedCard, setSelectedCard] = React.useState({});
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -25,7 +26,7 @@ function App() {
     setIsAddPlacePopupOpen(true);
   };
 
-  const [selectedCard, setSelectedCard] = React.useState({});
+  
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -71,5 +72,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
