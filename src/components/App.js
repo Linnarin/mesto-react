@@ -6,27 +6,22 @@ import PopupWithForm from './PopupWithForm';
 import ImagePopup from './ImagePopup';
 
 function App() {
-
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState({});
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
   };
 
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(true);
   };
 
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
   };
-
-  
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -38,6 +33,7 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setSelectedCard({});
   }
+
   return (
     <div className="page">
       <Header />
@@ -67,12 +63,9 @@ function App() {
         <span className="popupurl-error popup__input-text-error" />
       </ PopupWithForm>
 
-
       <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </div>
   );
 }
-
-
 
 export default App;
