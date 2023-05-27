@@ -1,7 +1,7 @@
 import closeIcon from '../images/CloseIcon.svg';
 
 function PopupWithForm(props) {
-    const { name, title, btnText, children, isOpen, onClose } = props;
+    const { name, title, btnText, children, isOpen, onClose, onSubmit} = props;
 
     const popupClass = isOpen ? ('popup popup_opened') : ('popup');
 
@@ -9,7 +9,7 @@ function PopupWithForm(props) {
         <div className={popupClass}>
             <div className="popup__container">
                 <h2 className="popup__title">{title}</h2>
-                <form name={name} noValidate method="post" className={`popup__input`}>
+                <form name={name} noValidate method="post" className={`popup__input`} onSubmit={onSubmit}>
                     {children}
                     <button type="submit" className="popup__btn">{btnText}</button>
                 </form>
