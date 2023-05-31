@@ -73,7 +73,6 @@ function App() {
   };
 
   function handleUpdateAvatar(avatar) {
-    console.log(avatar);
     api.patchAvatar(avatar)
       .then((avatar) => {
         setCurrentUser(avatar);

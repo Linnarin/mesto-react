@@ -24,7 +24,7 @@ function Card(props) {
 
     return (
         <article className="place">
-            <img className="place__img" src={card.link}
+            <img className="place__img" src={card.link} alt={card.name}
                 onClick={handleCardClick} />
             <div className="place__caption">
                 <h2 className="place__title">{card.name}</h2>
